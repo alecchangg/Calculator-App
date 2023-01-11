@@ -4,8 +4,7 @@
 
 wxIMPLEMENT_APP(App);
 
-bool App::OnInit()
-{
+bool App::OnInit() {
 	MainFrame* mainFrame = new MainFrame("Calculator");
 	mainFrame->SetClientSize(400, 650);
 	mainFrame->Center();
