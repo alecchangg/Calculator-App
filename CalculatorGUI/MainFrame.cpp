@@ -89,7 +89,7 @@ void MainFrame::ButtonClick(wxCommandEvent& evt) {
 			display_text = display_text + "(";
 			break;
 		case right_parenthesis:
-			display_text = display_text + ") ";
+			display_text = display_text + ")";
 			break;
 		case sign_change:
 			display_text = display_text + "-";
