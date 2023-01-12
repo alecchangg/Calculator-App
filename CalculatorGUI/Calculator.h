@@ -95,6 +95,11 @@ private:
 
 	}
 
+	float m_Round(float val) {
+		float value = (int)(val * 100 + .5);
+		return (float)value / 100;
+	}
+
 	std::string m_GetPostfix(std::string infix_expression) {
 		//stack for infix to postfix algorithm
 		Stack stack = Stack();
@@ -147,6 +152,7 @@ public:
 
 	//returns the inputted expression
 	std::string GetExpression() {
+		std::cout << expression;
 		return expression;
 	}
 
@@ -200,6 +206,8 @@ public:
 				else if (pemdas[s] == 1) {
 					calc = num2 + num1;
 				}
+
+				calc = this->m_Round(calc);
 				stack.Push(std::to_string(calc));
 			}
 		}

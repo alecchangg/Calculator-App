@@ -1,4 +1,5 @@
 #include "MainFrame.h"
+#include "Calculator.h"
 #include <wx/wx.h>
 
 #define WINDOW_STYLE (wxMINIMIZE_BOX | wxMAXIMIZE_BOX | wxSYSTEM_MENU | wxCAPTION | wxCLOSE_BOX | wxCLIP_CHILDREN)
@@ -148,6 +149,17 @@ void MainFrame::ButtonClick(wxCommandEvent& evt) {
 			// IsValid
 			//if yes: Calculate -> set displays
 			//if no: warning -> set displays
+
+			std::string expression = std::string(display_text.mb_str());
+
+			Calculator c = Calculator();
+
+			c.SetExpression(expression);
+			expression = c.Calculate();
+
+			wxString result(expression);
+			display_text = result;
+
 			break;
 	}
 
