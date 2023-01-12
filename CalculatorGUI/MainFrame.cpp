@@ -27,7 +27,7 @@ MainFrame::MainFrame(const wxString& title) : wxFrame(nullptr, wxID_ANY, title, 
 	input_display->SetBackgroundColour(*wxBLACK);
 	input_display->SetForegroundColour(*wxWHITE);
 
-	wxStaticText* output_display = new wxStaticText(main_panel, wxID_ANY, "1 * 0 = ", wxPoint(0, 25), wxSize(400, -1), wxALIGN_RIGHT);
+	wxStaticText* output_display = new wxStaticText(main_panel, wxID_ANY, "", wxPoint(0, 25), wxSize(400, -1), wxALIGN_RIGHT);
 	wxFont* output_display_font = new wxFont(OUTPUT_DISPLAY_FONT_SIZE, wxFONTFAMILY_DEFAULT, wxFONTSTYLE_NORMAL, wxFONTWEIGHT_NORMAL);
 	output_display->SetFont(*output_display_font);
 	output_display->SetBackgroundColour(*wxBLACK);
@@ -86,10 +86,10 @@ void MainFrame::ButtonClick(wxCommandEvent& evt) {
 
 	switch (button_id) {
 		case left_parenthesis:
-			display_text = display_text + "(";
+			display_text = display_text + "( ";
 			break;
 		case right_parenthesis:
-			display_text = display_text + ")";
+			display_text = display_text + " )";
 			break;
 		case sign_change:
 			display_text = display_text + "-";
